@@ -102,7 +102,7 @@ Module.register("MMM-MetroTransit", {
 
     getDom: function() {
         Log.info(this.busesInfo)
-        var wrapper = document.createElement("wrapper")
+        var wrapper = document.createElement("div")
         wrapper.className = "wrapper";
         wrapper.style.maxWidth = this.config.maxWidth;
 
