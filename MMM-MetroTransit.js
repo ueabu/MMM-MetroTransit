@@ -97,6 +97,7 @@ Module.register("MMM-MetroTransit", {
     },
 
     getDom: function() {
+        Log.info(this.busesInfo)
         var element = document.createElement("div")
         element.className = "myContent"
         element.innerHTML = "Hello, World!"
