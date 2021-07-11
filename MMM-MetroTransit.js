@@ -11,6 +11,7 @@ Module.register("MMM-MetroTransit", {
     busesInfo:[],
     defaults: {
         header: 'Minneapolis Metro',
+        maxWidth: "450px",
         buses: [
             {
                 line: '120'
@@ -98,9 +99,18 @@ Module.register("MMM-MetroTransit", {
 
     getDom: function() {
         Log.info(this.busesInfo)
-        var element = document.createElement("div")
-        element.className = "myContent"
-        element.innerHTML = "Hello, World!"
+        var wrapper = document.createElement("wrapper")
+        wrapper.className = "wrapper";
+        wrapper.style.maxWidth = this.config.maxWidth;
+
+
+        // loading
+        if (!this.loaded) {
+            wrapper.innerHTML = "Finding buses . . .";
+            wrapper.classList.add("bright", "light", "small");
+            return wrapper;
+        }
+
         return element
     }
     
