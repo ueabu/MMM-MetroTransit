@@ -79,8 +79,13 @@ Module.register("MMM-MetroTransit", {
 
         for (var i = 0; i < arrayOfNexTripDeparture.length; i++) {
             
-            Log.info(xmlDataObject.getElementsByTagName("Route")[i].childNodes[0].nodeValue);
-            Log.info(xmlDataObject.getElementsByTagName("Description")[i].childNodes[0].nodeValue);
+            var route = xmlDataObject.getElementsByTagName("Route")[i].childNodes[0].nodeValue
+            if (route === 14){
+                var description = xmlDataObject.getElementsByTagName("Description")[i].childNodes[0].nodeValue
+
+                Log.info(description)
+
+            }
             Log.info("====================");
 
             // for (detailIndex = 0; detailIndex < nextTripDetails.length; detailIndex++) {
