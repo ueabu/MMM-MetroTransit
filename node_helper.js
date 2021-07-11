@@ -23,11 +23,11 @@ module.exports = NodeHelper.create({
             url: minneapolisMetroAPI
         }
         request(options, function (error, response, body) {
-            Log.info(response);
+            console.log(response);
 
             if (!error && response.statusCode == 200) {
-                Log.info("==============================");
-                Log.info(response);
+                // Log.info("==============================");
+                // Log.info(response);
                 var result = JSON.parse(body)
                 Log.info(result);
                 self.sendSocketNotification('BUS_RESULT', result)
@@ -35,8 +35,7 @@ module.exports = NodeHelper.create({
         })
     },
     socketNotificationReceived: function(notification, payload) {
-        Log.info("socketNotificationReceived");
-        Log.info(notification);
+        console.log("socketNotificationReceived");
         if (notification === 'GET_INFO') {
           this.getBusInfo(payload)
         }
