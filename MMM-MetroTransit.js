@@ -128,7 +128,7 @@ Module.register("MMM-MetroTransit", {
         var tr = document.createElement("tr");
         table.appendChild(tr);
 
-        var labels = ["Bus", "Departure Time", "Direction", "    "];
+        var labels = ["Bus", "Departure", "Direction", "    "];
         if (this.config.verbose != false) {
             var labels = ["Bus", "(Departure Time)", "  ", "    ", "Stop", "Dest"];
         }
