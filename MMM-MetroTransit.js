@@ -140,7 +140,7 @@ Module.register("MMM-MetroTransit", {
             tr.appendChild(th);
         };
 
-        return element
+        return wrapper
     }
     
 
