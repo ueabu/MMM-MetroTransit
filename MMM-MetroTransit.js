@@ -113,13 +113,13 @@ Module.register("MMM-MetroTransit", {
             return wrapper;
         }
 
-        // creating the header
-        if (this.config.useHeader != false) {
-            var header = document.createElement("header");
-            header.classList.add("xsmall", "bright", "light", "header");
-            header.innerHTML = this.config.header;
-            wrapper.appendChild(header);
-        }
+        // // creating the header
+        // if (this.config.useHeader != false) {
+        //     var header = document.createElement("header");
+        //     header.classList.add("xsmall", "bright", "light", "header");
+        //     header.innerHTML = this.config.header;
+        //     wrapper.appendChild(header);
+        // }
 
         var table = document.createElement("table");
         table.classList.add("xsmall", "bright", "light");
