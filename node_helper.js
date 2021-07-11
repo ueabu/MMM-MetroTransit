@@ -23,10 +23,7 @@ module.exports = NodeHelper.create({
             url: minneapolisMetroAPI
         }
         request(options, function (error, response, body) {
-            console.log(response);
-
             if (!error && response.statusCode == 200) {
-                // Log.info(response);
                 self.sendSocketNotification('BUS_RESULT', response)
             }
         })
