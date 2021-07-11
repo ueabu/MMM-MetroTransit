@@ -73,8 +73,9 @@ Module.register("MMM-MetroTransit", {
         console.log(new window.DOMParser().parseFromString(xmldata, "text/xml"));
         
         var xmlDataObject = new window.DOMParser().parseFromString(xmldata, "text/xml")
-        const routes = xmlDataObject.getElementsByTagName("ArrayOfNexTripDeparture");
-        Log.info(routes);
+        const arrayOfNexTripDeparture = xmlDataObject.getElementsByTagName("NexTripDeparture");
+        // const nextTripDepatures = arrayOfNexTripDeparture.get
+        Log.info(arrayOfNexTripDeparture);
 
         // for (var i = 0; i < routes.length; i++) {
         //     var name = names[i].firstChild.nodeValue;
