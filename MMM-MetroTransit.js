@@ -77,7 +77,7 @@ Module.register("MMM-MetroTransit", {
         Log.info(arrayOfNexTripDeparture);
 
         for (var i = 0; i < arrayOfNexTripDeparture.length; i++) {
-            var name = arrayOfNexTripDeparture[i].firstChild.nodeValue;
+            var name = arrayOfNexTripDeparture[i].getAttribute("Route").firstChild.nodeValue;
             Log.info(name);
 
             // var div = document.createElement("div");
