@@ -107,11 +107,11 @@ Module.register("MMM-MetroTransit", {
 
 
         // loading
-        // if (!this.loaded) {
-        //     wrapper.innerHTML = "Finding buses . . .";
-        //     wrapper.classList.add("bright", "light", "small");
-        //     return wrapper;
-        // }
+        if (!this.loaded) {
+            wrapper.innerHTML = "Finding buses . . .";
+            wrapper.classList.add("bright", "light", "small");
+            return wrapper;
+        }
 
         // creating the header
         if (this.config.useHeader != false) {
