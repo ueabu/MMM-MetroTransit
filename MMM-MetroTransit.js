@@ -75,11 +75,11 @@ Module.register("MMM-MetroTransit", {
         var xmlDataObject = new window.DOMParser().parseFromString(xmldata, "text/xml")
         const arrayOfNexTripDeparture = xmlDataObject.getElementsByTagName("NexTripDeparture");
         Log.info(arrayOfNexTripDeparture);
-        Log.info(xmlDataObject.getElementsByTagName("Route")[0].childNodes[0].nodeValue);
 
         for (var i = 0; i < arrayOfNexTripDeparture.length; i++) {
             
             var route = xmlDataObject.getElementsByTagName("Route")[i].childNodes[0].nodeValue
+            Log.info(route)
             if (route === 14){
                 var description = xmlDataObject.getElementsByTagName("Description")[i].childNodes[0].nodeValue
 
