@@ -80,13 +80,13 @@ Module.register("MMM-MetroTransit", {
             
             var route = xmlDataObject.getElementsByTagName("Route")[i].childNodes[0].nodeValue
             Log.info(route)
-            if (route === 14){
+            if (route == 14){
                 var description = xmlDataObject.getElementsByTagName("Description")[i].childNodes[0].nodeValue
                 Log.info("FOUND A 14")
                 // Log.info(description)
 
             }
-            Log.info("====================");
+            // Log.info("====================");
 
             // for (detailIndex = 0; detailIndex < nextTripDetails.length; detailIndex++) {
             //     Log.info(arrayOfNexTripDeparture[i].childNodes[detailIndex].nodeValue);
