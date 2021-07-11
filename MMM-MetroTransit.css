@@ -36,4 +36,6 @@
 
 .MMM-MetroTransit .remainingMinutes {
   font-size: 19px;
+  font-weight: bold;
+  text-decoration: underline;
 }
