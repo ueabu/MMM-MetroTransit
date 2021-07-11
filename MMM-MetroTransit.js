@@ -106,68 +106,68 @@ Module.register("MMM-MetroTransit", {
         wrapper.style.maxWidth = this.config.maxWidth;
 
 
-        // // loading
-        // if (!this.loaded) {
-        //     wrapper.innerHTML = "Finding buses . . .";
-        //     wrapper.classList.add("bright", "light", "small");
-        //     return wrapper;
-        // }
+        // loading
+        if (!this.loaded) {
+            wrapper.innerHTML = "Finding buses . . .";
+            wrapper.classList.add("bright", "light", "small");
+            return wrapper;
+        }
 
-        // // creating the header
+        // creating the header
         // if (this.config.useHeader != false) {
-        //     var header = document.createElement("header");
-        //     header.classList.add("xsmall", "bright", "light", "header");
-        //     header.innerHTML = this.config.header;
-        //     wrapper.appendChild(header);
+        var header = document.createElement("header");
+        header.classList.add("xsmall", "bright", "light", "header");
+        header.innerHTML = "7th & Park Station"
+        wrapper.appendChild(header);
         // }
 
-        // var table = document.createElement("table");
-        // table.classList.add("xsmall", "bright", "light");
-        // wrapper.appendChild(table);
+        var table = document.createElement("table");
+        table.classList.add("xsmall", "bright", "light");
+        wrapper.appendChild(table);
 
-        // var tr = document.createElement("tr");
-        // table.appendChild(tr);
+        var tr = document.createElement("tr");
+        table.appendChild(tr);
 
-        // var labels = ["Bus", "Departure Time", "Direction", "    "];
-        // if (this.config.verbose != false) {
-        //     var labels = ["Bus", "(Departure Time)", "  ", "    ", "Stop", "Dest"];
-        // }
+        var labels = ["Bus", "Departure Time", "Direction", "    "];
+        if (this.config.verbose != false) {
+            var labels = ["Bus", "(Departure Time)", "  ", "    ", "Stop", "Dest"];
+        }
 
-        // for (i = 0; i < labels.length; i ++) {
-        //     var th = document.createElement("th");
-        //     th.classList.add("xsmall", "bright");
-        //     th.innerHTML = labels[i];
-        //     tr.appendChild(th);
-        // };
+        for (i = 0; i < labels.length; i ++) {
+            var th = document.createElement("th");
+            th.classList.add("xsmall", "bright");
+            th.innerHTML = labels[i];
+            tr.appendChild(th);
+        };
 
-        // for (var i = 0; i < this.busesInfo.length; i++){
-        //     var tr = document.createElement("tr");
-        //     table.appendChild(tr);
+        for (var i = 0; i < this.busesInfo.length; i++){
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
 
-        //     // bus from newBus
-        //     var bus = document.createElement("td");
-        //     bus.classList.add("xsmall", "bright", "bus");
-        //     bus.innerHTML = "14";
-        //     tr.appendChild(bus);
+            // bus from newBus
+            var bus = document.createElement("td");
+            bus.classList.add("xsmall", "bright", "bus");
+            bus.innerHTML = "14";
+            tr.appendChild(bus);
 
-        //     // remainingMinutes from newBus
-        //     var remainingMinutes = document.createElement("td");
-        //     remainingMinutes.classList.add("xsmall", "bright", "remainingMinutes");
-        //     remainingMinutes.innerHTML = this.busesInfo[i]["depatureText"];
-        //     tr.appendChild(remainingMinutes);
+            // remainingMinutes from newBus
+            var remainingMinutes = document.createElement("td");
+            remainingMinutes.classList.add("xsmall", "bright", "remainingMinutes");
+            remainingMinutes.innerHTML = this.busesInfo[i]["depatureText"];
+            tr.appendChild(remainingMinutes);
 
-        //     // arrivalTime from newBus
-        //     // var arrivalTime = document.createElement("td");
-        //     // arrivalTime.classList.add("xsmall", "bright", "arrivalTime");
-        //     // arrivalTime.innerHTML = this.busesInfo[i]["depatureTime"];
-        //     // tr.appendChild(arrivalTime);
+            // arrivalTime from newBus
+            // var arrivalTime = document.createElement("td");
+            // arrivalTime.classList.add("xsmall", "bright", "arrivalTime");
+            // arrivalTime.innerHTML = this.busesInfo[i]["depatureTime"];
+            // tr.appendChild(arrivalTime);
 
-        //     // direction from newBus
-        //     var dir = document.createElement("td");
-        //     dir.classList.add("xsmall", "bright", "dir");
-        //     dir.innerHTML = this.busesInfo[i]["description"];
-        //     tr.appendChild(dir);
-        // }
+            // direction from newBus
+            var dir = document.createElement("td");
+            dir.classList.add("xsmall", "bright", "dir");
+            dir.innerHTML = this.busesInfo[i]["description"];
+            tr.appendChild(dir);
+        }
 
         return wrapper
     }
