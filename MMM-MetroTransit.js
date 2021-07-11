@@ -76,7 +76,7 @@ Module.register("MMM-MetroTransit", {
         const arrayOfNexTripDeparture = xmlDataObject.getElementsByTagName("NexTripDeparture");
         Log.info(arrayOfNexTripDeparture);
 
-        for (var i = 0; i < routes.arrayOfNexTripDeparture; i++) {
+        for (var i = 0; i < arrayOfNexTripDeparture.length; i++) {
             var name = arrayOfNexTripDeparture[i].firstChild.nodeValue;
             Log.info(name);
 
