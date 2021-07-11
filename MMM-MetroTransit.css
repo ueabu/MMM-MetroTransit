@@ -1,0 +1,44 @@
+.metrotransit {
+    border-collapse: collapse!important;
+  }
+  
+  .metrotransit .small {
+    font-size: 14px;
+  }
+  
+  .metrotransit .medium {
+    font-size: 20px;
+  }
+  
+  .metrotransit tr.last {
+    border-bottom: 1px solid gray;
+  }
+  
+  .metrotransit td.bus-line {
+    color: white;
+    padding-right: 1em;
+    text-align: left;
+  }
+  .metrotransit td.bus-symbol {
+    padding-right: 0.2em;
+  }
+  
+  .metrotransit td.bus-distance {
+    padding-right: 0.5em;
+  }
+  
+  .metrotransit td.arriving {
+    color: red;
+  }
+  
+  .metrotransit td.close {
+    color: yellow;
+  }
+  
+  .metrotransit td.faraway {
+    color: green;
+  }
+  
+  .metrotransit td.number {
+    text-align: right;
+  }
