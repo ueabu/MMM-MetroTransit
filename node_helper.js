@@ -23,6 +23,8 @@ module.exports = NodeHelper.create({
             url: minneapolisMetroAPI
         }
         request(options, function (error, response, body) {
+            Log.info(response);
+
             if (!error && response.statusCode == 200) {
                 Log.info("==============================");
                 Log.info(response);
