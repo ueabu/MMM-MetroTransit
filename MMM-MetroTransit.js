@@ -1,7 +1,5 @@
 /* global Module */
 
-const { Module } = require("module");
-
 /* Magic Mirror
  * Module: MMM-MetroTransit
  *
