@@ -71,9 +71,9 @@ Module.register("MMM-MetroTransit", {
         console.log(payload)
         console.log(payload.body.text())
         var xmldata = payload.body
+        console.log(new window.DOMParser().parseFromString(xmldata, "text/xml"));
         
-        
-        const routes = xmldata.getElementsByTagName("Route");
+        // const routes = xmldata.getElementsByTagName("Route");
         // console.log(routes)
         
 
