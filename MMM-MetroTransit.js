@@ -72,7 +72,7 @@ Module.register("MMM-MetroTransit", {
         var xmldata = payload.body
 
         var parser = new DOMParser();
-        var xmlDoc = parser.parseFromString(book, "text/xml");
+        var xmlDoc = parser.parseFromString(xmldata, "text/xml");
         
         const routes = xmldata.getElementsByTagName("Route");
         console.log(routes)
