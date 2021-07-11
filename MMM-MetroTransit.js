@@ -11,6 +11,7 @@ Module.register("MMM-MetroTransit", {
     busesInfo:[],
     defaults: {
         header: 'Minneapolis Metro',
+        useHeader: true,           // false if you don't want a header
         maxWidth: "450px",
         buses: [
             {
@@ -110,6 +111,21 @@ Module.register("MMM-MetroTransit", {
             wrapper.classList.add("bright", "light", "small");
             return wrapper;
         }
+
+        // creating the header
+        if (this.config.useHeader != false) {
+            var header = document.createElement("header");
+            header.classList.add("xsmall", "bright", "light", "header");
+            header.innerHTML = this.config.header;
+            wrapper.appendChild(header);
+        }
+
+        var table = document.createElement("table");
+        table.classList.add("xsmall", "bright", "light");
+        wrapper.appendChild(table);
+
+        var tr = document.createElement("tr");
+        table.appendChild(tr);
 
         return element
     }
