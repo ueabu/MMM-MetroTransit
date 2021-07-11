@@ -28,7 +28,6 @@ Module.register("MMM-MetroTransit", {
     start: function() {
         Log.info("Starting module: " + this.name);
 
-        this.getBusInfo(info)
         this.config.buses.forEach(info => {
             this.getBusInfo(info)
         })
