@@ -12,6 +12,7 @@ Module.register("MMM-MetroTransit", {
     defaults: {
         header: 'Minneapolis Metro',
         useHeader: true,           // false if you don't want a header
+        verbose: false,            // show destination and stop name/ID if true
         maxWidth: "450px",
         buses: [
             {
@@ -126,6 +127,18 @@ Module.register("MMM-MetroTransit", {
 
         var tr = document.createElement("tr");
         table.appendChild(tr);
+
+        var labels = ["Bus", "(min)", "  ", "    "];
+        if (this.config.verbose != false) {
+            var labels = ["Bus", "(min)", "  ", "    ", "Stop", "Dest"];
+        }
+
+        for (i = 0; i < labels.length; i ++) {
+            var th = document.createElement("th");
+            th.classList.add("xsmall", "bright");
+            th.innerHTML = labels[i];
+            tr.appendChild(th);
+        };
 
         return element
     }
