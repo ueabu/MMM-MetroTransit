@@ -69,7 +69,6 @@ Module.register("MMM-MetroTransit", {
     socketNotificationReceived: function(notification, payload) {
         Log.info("socketNotificationReceived");
         console.log(payload)
-        console.log(payload.body.text())
         var xmldata = payload.body
         console.log(new window.DOMParser().parseFromString(xmldata, "text/xml"));
         
