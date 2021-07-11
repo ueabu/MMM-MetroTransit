@@ -129,9 +129,9 @@ Module.register("MMM-MetroTransit", {
         var tr = document.createElement("tr");
         table.appendChild(tr);
 
-        var labels = ["Bus", "(min)", "  ", "    "];
+        var labels = ["Bus", "Departure Time", "Direction", "    "];
         if (this.config.verbose != false) {
-            var labels = ["Bus", "(min)", "  ", "    ", "Stop", "Dest"];
+            var labels = ["Bus", "(Departure Time)", "  ", "    ", "Stop", "Dest"];
         }
 
         for (i = 0; i < labels.length; i ++) {
@@ -158,10 +158,10 @@ Module.register("MMM-MetroTransit", {
             tr.appendChild(remainingMinutes);
 
             // arrivalTime from newBus
-            var arrivalTime = document.createElement("td");
-            arrivalTime.classList.add("xsmall", "bright", "arrivalTime");
-            arrivalTime.innerHTML = this.busesInfo[i]["depatureTime"];
-            tr.appendChild(arrivalTime);
+            // var arrivalTime = document.createElement("td");
+            // arrivalTime.classList.add("xsmall", "bright", "arrivalTime");
+            // arrivalTime.innerHTML = this.busesInfo[i]["depatureTime"];
+            // tr.appendChild(arrivalTime);
 
             // direction from newBus
             var dir = document.createElement("td");
