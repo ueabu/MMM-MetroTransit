@@ -68,7 +68,18 @@ Module.register("MMM-MetroTransit", {
 
     socketNotificationReceived: function(notification, payload) {
         Log.info("socketNotificationReceived");
-        console.log(payload.body)
+        // console.log(payload.body)
+        var xmldata = payload.body
+
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(book, "text/xml");
+        
+        const routes = xmldata.getElementsByTagName("Route");
+        console.log(routes)
+        
+
+
+
         var self = this
         if (notification === "BUS_RESULT") {
           if (payload.length !== 0) { // update DOM only if it's needed
