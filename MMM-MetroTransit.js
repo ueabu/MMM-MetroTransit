@@ -82,11 +82,16 @@ Module.register("MMM-MetroTransit", {
 
     getDom: function() {
 
-        var wrapper = document.createElement("table")
-      
-        Log.info(this.busesInfo);
+        var element = document.createElement("div")
+        element.className = "myContent"
+        element.innerHTML = "Hello, World!"
+        return element
 
-        return wrapper
+        // var wrapper = document.createElement("table")
+      
+        // Log.info(this.busesInfo);
+
+        // return wrapper
     }
     
 
