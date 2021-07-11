@@ -27,7 +27,7 @@ module.exports = NodeHelper.create({
 
             if (!error && response.statusCode == 200) {
                 // Log.info(response);
-                self.sendSocketNotification('BUS_RESULT', result)
+                self.sendSocketNotification('BUS_RESULT', response)
             }
         })
     },
