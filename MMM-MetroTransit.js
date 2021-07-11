@@ -85,12 +85,12 @@ Module.register("MMM-MetroTransit", {
                 this.busesInfo.push(upcomingTimes)
             }
         }
+        this.loaded = true;
         var self = this
-
         if (notification === "BUS_RESULT") {
             if (arrayOfNexTripDeparture.length !== 0) { // update DOM only if it's needed
               this.updateDom(self.config.fadeSpeed)
-              this.loaded = true;
+              
             }
           }
     
