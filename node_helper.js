@@ -36,7 +36,7 @@ module.exports = NodeHelper.create({
     },
     socketNotificationReceived: function(notification, payload) {
         Log.info("socketNotificationReceived");
-
+        Log.info(notification);
         if (notification === 'GET_INFO') {
           this.getBusInfo(payload)
         }
