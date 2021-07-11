@@ -26,10 +26,7 @@ module.exports = NodeHelper.create({
             console.log(response);
 
             if (!error && response.statusCode == 200) {
-                // Log.info("==============================");
                 // Log.info(response);
-                var result = JSON.parse(body)
-                Log.info(result);
                 self.sendSocketNotification('BUS_RESULT', result)
             }
         })
