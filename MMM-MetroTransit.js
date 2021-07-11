@@ -106,12 +106,12 @@ Module.register("MMM-MetroTransit", {
         wrapper.style.maxWidth = this.config.maxWidth;
 
 
-        // loading
-        if (!this.loaded) {
-            wrapper.innerHTML = "Finding buses . . .";
-            wrapper.classList.add("bright", "light", "small");
-            return wrapper;
-        }
+        // // loading
+        // if (!this.loaded) {
+        //     wrapper.innerHTML = "Finding buses . . .";
+        //     wrapper.classList.add("bright", "light", "small");
+        //     return wrapper;
+        // }
 
         // // creating the header
         // if (this.config.useHeader != false) {
