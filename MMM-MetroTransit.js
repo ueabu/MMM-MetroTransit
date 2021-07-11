@@ -141,8 +141,36 @@ Module.register("MMM-MetroTransit", {
             tr.appendChild(th);
         };
 
+        for (var i = 0; i < this.busesInfo.length; i++){
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+
+            // bus from newBus
+            var bus = document.createElement("td");
+            bus.classList.add("xsmall", "bright", "bus");
+            bus.innerHTML = "14";
+            tr.appendChild(bus);
+
+            // remainingMinutes from newBus
+            var remainingMinutes = document.createElement("td");
+            remainingMinutes.classList.add("xsmall", "bright", "remainingMinutes");
+            remainingMinutes.innerHTML = this.busesInfo[i]["depatureText"];
+            tr.appendChild(remainingMinutes);
+
+            // arrivalTime from newBus
+            var arrivalTime = document.createElement("td");
+            arrivalTime.classList.add("xsmall", "bright", "arrivalTime");
+            arrivalTime.innerHTML = this.busesInfo[i]["depatureTime"];
+            tr.appendChild(arrivalTime);
+
+            // direction from newBus
+            var dir = document.createElement("td");
+            dir.classList.add("xsmall", "bright", "dir");
+            dir.innerHTML = this.busesInfo[i]["description"];
+            tr.appendChild(dir);
+        }
+
         return wrapper
     }
     
-
 })
