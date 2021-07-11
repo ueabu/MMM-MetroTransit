@@ -82,8 +82,7 @@ Module.register("MMM-MetroTransit", {
             Log.info(route)
             if (route == 14){
                 var description = xmlDataObject.getElementsByTagName("Description")[i].childNodes[0].nodeValue
-                Log.info("FOUND A 14")
-                // Log.info(description)
+                Log.info(description)
 
             }
             // Log.info("====================");
