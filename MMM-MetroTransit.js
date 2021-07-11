@@ -72,10 +72,17 @@ Module.register("MMM-MetroTransit", {
         var xmldata = payload.body
         console.log(new window.DOMParser().parseFromString(xmldata, "text/xml"));
         
-        // const routes = xmldata.getElementsByTagName("Route");
-        // console.log(routes)
-        
+        var xmlDataObject = new window.DOMParser().parseFromString(xmldata, "text/xml")
+        const routes = xmlDataObject.getElementsByTagName("Routes");
+        Log.info(routes);
 
+        // for (var i = 0; i < routes.length; i++) {
+        //     var name = names[i].firstChild.nodeValue;
+        //     var div = document.createElement("div");
+        //     var textNode = document.createTextNode(name);
+        //     document.getElementById("wrapper").appendChild(div);
+        // }
+    
 
 
         var self = this
