@@ -80,12 +80,12 @@ Module.register("MMM-MetroTransit", {
             
             var route = xmlDataObject.getElementsByTagName("Route")[i].childNodes[0].nodeValue
             Log.info(route)
-            if (route === 14){
-                var description = xmlDataObject.getElementsByTagName("Description")[i].childNodes[0].nodeValue
+            // if (route === 14){
+            //     var description = xmlDataObject.getElementsByTagName("Description")[i].childNodes[0].nodeValue
 
-                Log.info(description)
+            //     Log.info(description)
 
-            }
+            // }
             Log.info("====================");
 
             // for (detailIndex = 0; detailIndex < nextTripDetails.length; detailIndex++) {
