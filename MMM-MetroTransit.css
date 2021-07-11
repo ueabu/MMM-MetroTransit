@@ -23,7 +23,7 @@
 }
 
 .MMM-MetroTransit .bus {
-  color: yellow;               /* Color the shape. Default is white. */
+  color: white;               /* Color the shape. Default is white. */
 }
 
 .MMM-MetroTransit .dest {
@@ -32,4 +32,8 @@
 
 .MMM-MetroTransit .stop {
   font-size: 12px;
+}
+
+.MMM-MetroTransit .remainingMinutes {
+  font-size: 19px;
 }
