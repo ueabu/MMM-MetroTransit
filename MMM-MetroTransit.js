@@ -62,52 +62,34 @@ Module.register("MMM-MetroTransit", {
     },
 
     getBusInfo: function (info) {
-        Log.info("getBusInfo");
         this.sendSocketNotification('GET_INFO', info)
     },
 
     socketNotificationReceived: function(notification, payload) {
-        Log.info("socketNotificationReceived");
-        console.log(payload)
         var xmldata = payload.body
-        console.log(new window.DOMParser().parseFromString(xmldata, "text/xml"));
         
         var xmlDataObject = new window.DOMParser().parseFromString(xmldata, "text/xml")
         const arrayOfNexTripDeparture = xmlDataObject.getElementsByTagName("NexTripDeparture");
-        Log.info(arrayOfNexTripDeparture);
-
         for (var i = 0; i < arrayOfNexTripDeparture.length; i++) {
             
             var route = xmlDataObject.getElementsByTagName("Route")[i].childNodes[0].nodeValue
-            Log.info(route)
+
             if (route == 14){
-                var description = xmlDataObject.getElementsByTagName("Description")[i].childNodes[0].nodeValue
-                Log.info(description)
-
+                var upcomingTimes = {}
+                upcomingTimes['depatureText'] = xmlDataObject.getElementsByTagName("DepartureText")[i].childNodes[0].nodeValue
+                upcomingTimes['depatureTime'] = xmlDataObject.getElementsByTagName("DepartureTime")[i].childNodes[0].nodeValue
+                upcomingTimes['description'] = xmlDataObject.getElementsByTagName("Description")[i].childNodes[0].nodeValue
+                this.busesInfo.push(upcomingTimes)
             }
-            // Log.info("====================");
-
-            // for (detailIndex = 0; detailIndex < nextTripDetails.length; detailIndex++) {
-            //     Log.info(arrayOfNexTripDeparture[i].childNodes[detailIndex].nodeValue);
-            // }
-
-            // var name = arrayOfNexTripDeparture[i].getAttribute("Route").firstChild.nodeValue;
-            // Log.info(name);
-
-            // var div = document.createElement("div");
-            // var textNode = document.createTextNode(name);
-            // document.getElementById("wrapper").appendChild(div);
         }
-    
-
-
         var self = this
+
         if (notification === "BUS_RESULT") {
-          if (payload.length !== 0) { // update DOM only if it's needed
-            this.busesInfo.push(payload)
-            this.updateDom(self.config.fadeSpeed)
+            if (arrayOfNexTripDeparture.length !== 0) { // update DOM only if it's needed
+              this.updateDom(self.config.fadeSpeed)
+            }
           }
-        }
+    
     },
 
     getHeader: function() {
