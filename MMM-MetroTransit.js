@@ -68,14 +68,12 @@ Module.register("MMM-MetroTransit", {
 
     socketNotificationReceived: function(notification, payload) {
         Log.info("socketNotificationReceived");
-        // console.log(payload.body)
+        console.log(payload)
         var xmldata = payload.body
-
-        var parser = new DOMParser();
-        var xmlDoc = parser.parseFromString(xmldata, "text/xml");
+        
         
         const routes = xmldata.getElementsByTagName("Route");
-        console.log(routes)
+        // console.log(routes)
         
 
 
