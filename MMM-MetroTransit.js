@@ -68,11 +68,10 @@ Module.register("MMM-MetroTransit", {
 
     socketNotificationReceived: function(notification, payload) {
         Log.info("socketNotificationReceived");
-        console.log(payload)
+        console.log(payload.body)
         var self = this
         if (notification === "BUS_RESULT") {
           if (payload.length !== 0) { // update DOM only if it's needed
-            Log.info(this.busesInfo);
             this.busesInfo.push(payload)
             this.updateDom(self.config.fadeSpeed)
           }
